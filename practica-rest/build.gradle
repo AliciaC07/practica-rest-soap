@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile 'io.javalin:javalin:3.8.0'
+    //manejo de log.
+    compile "org.slf4j:slf4j-simple:1.7.28"
+    //libreria jsoup.
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compile "com.konghq:unirest-java:3.11.09"
+}
+
+test {
+    useJUnitPlatform()
+}
